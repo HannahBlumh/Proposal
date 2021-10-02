@@ -1,0 +1,231 @@
+\documentclass[12pt]{article}
+\renewcommand{\thesection}{\Roman{section}} 
+\renewcommand{\thesubsection}{\thesection.\Roman{subsection}}
+%\usepackage[tocindentauto]{tocstyle}
+%\usetocstyle{KOMAlike} %the previous line resets it
+%\usepackage{natbib}
+\usepackage{biblatex}
+\addbibresource[]{ref.bib}
+\usepackage{url}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{graphviz}
+\usepackage[T1]{fontenc}
+\graphicspath{{images/}}
+\usepackage{parskip}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{parskip}
+\usepackage{hologo}
+\usepackage{listings}
+\usepackage{titlesec, blindtext, color}
+\usepackage{titling}
+\usepackage{tcolorbox}
+\usepackage[hmargin=1in,vmargin=1in]{geometry}
+\usepackage{float}
+\usepackage{tikz}
+\usepackage{appendix}
+\usepackage{listings} % For code importing
+\usepackage{xcolor} % for setting colors
+\usepackage{svg}
+\usepackage{tocloft}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+
+
+
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	urlcolor=cyan,
+}
+
+\lstdefinestyle{customc}{
+  belowcaptionskip=1\baselineskip,
+  breaklines=true,
+  frame=L,
+  xleftmargin=\parindent,
+  language=C,
+  showstringspaces=false,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\bfseries\color{green!40!black},
+  commentstyle=\itshape\color{purple!40!black},
+  identifierstyle=\color{blue},
+  stringstyle=\color{orange},
+ }
+
+ \lstset{ %
+  backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}
+  basicstyle=\footnotesize,        % the size of the fonts that are used for the code
+  breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+  breaklines=true,                 % sets automatic line breaking
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{commentsColor}\textit,    % comment style
+  deletekeywords={...},            % if you want to delete keywords from the given language
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+  frame=tb,	                   	   % adds a frame around the code
+  keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+  keywordstyle=\color{keywordsColor}\bfseries,       % keyword style
+  language=Python,                 % the language of the code (can be overrided per snippet)
+  otherkeywords={*,...},           % if you want to add more keywords to the set
+  numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
+  numbersep=8pt,                   % how far the line-numbers are from the code
+  numberstyle=\tiny\color{commentsColor}, % the style that is used for the line-numbers
+  rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  showstringspaces=false,          % underline spaces within strings only
+  showtabs=false,                  % show tabs within strings adding particular underscores
+  stepnumber=1,                    % the step between two line-numbers. If it's 1, each line will be numbered
+  stringstyle=\color{stringColor}, % string literal style
+  tabsize=2,	                   % sets default tabsize to 2 spaces
+  title=\lstname,                  % show the filename of files included with \lstinputlisting; also try caption instead of title
+  columns=fixed                    % Using fixed column width (for e.g. nice alignment)
+}
+
+\lstdefinestyle{customasm}{
+  belowcaptionskip=1\baselineskip,
+  frame=L,
+  xleftmargin=\parindent,
+  language=[x86masm]Assembler,
+  basicstyle=\footnotesize\ttfamily,
+  commentstyle=\itshape\color{purple!40!black},
+}
+
+\lstset{escapechar=@,style=customc}
+
+%\makeatletter
+%\let\thetitle\@title
+
+%\let\thedate\@date
+%\makeatother
+
+%\pagestyle{fancy}
+%\fancyhf{}
+%\rhead{\theauthor}
+%\lhead{\thetitle}
+%\cfoot{\thepage}
+
+\begin{document}
+\title{Project Proposal}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{titlepage}
+	\centering
+    \vspace*{0.5 cm}
+    \includegraphics[scale = 0.11]{isu_seal.png}\\[1.0 cm]	% University Logo
+    \textsc{\LARGE IOWA STATE UNIVERSITY}\\[2.0 cm]
+    \textsc{\large AEROSPACE ENGINEERING DEPARTMENT}\\[0.2 cm]
+    \textsc{\large Computational Techniques for Aerospace Design}\\[0.2 cm]
+	\textsc{\Large AERE 361}\\[0.5 cm]				% Course Code
+	\textsc{\Large Project Proposal}\\[0.2 cm]
+	\textsc{\Large CodeBreakers}\\[0.2 cm]
+	\rule{\linewidth}{0.2 mm} \\[0.4 cm]
+	%{ \huge \bfseries \thetitle}\\
+	
+	
+	\begin{minipage}{0.8\textwidth}
+		
+			\begin{flushleft} 
+			\emph{Team Member Names :} \\
+			Blumhoefer, Hannah\linebreak
+			Miller, Trey\linebreak
+			Novy, Andrew\linebreak
+			Chandler, Tyler\linebreak
+			
+			
+		\end{flushleft}
+	\end{minipage}\\[2 cm]
+	
+	\vfill
+	
+\end{titlepage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\maketitle
+\tableofcontents
+\pagebreak
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{ABSTRACT}
+As people, we will often require our own privacy. Either to simply relax, to be able to have our own thoughts or creative space, or to simply feel 'safe.' Sometimes, people try to breach this privacy, either because they are unaware, desperate, or malicious in their actions. Since the earliest of times, the simple solution to prevent all of these from entering our safe space: A lock, or for smaller private items, a safe. Modern-day safes can come in all shapes, sizes, and price ranges, with a variety of locking methods and tools. On a college campus, students are often in a new living situation, and their privacy may be challenged a lot more than is normal to them. However, to get a safe of the right dimensions and security, you must give up on the price, which isn't exactly the most affordable for college students. Therefore, we are proposing the creation of a simply applied lock and safe that could be used in a college dorm setting. This could be something that could, in theory, be of any shape, size, and security for a reasonable price. It could be set to a simple combination lock, to a voice-activated password, and more. Even if it's simply used to keep a secret gift from your roommate or significant other, it will provide security and privacy for each person's needs.
+
+\section{INTRODUCTION}
+As you can tell, our project proposal is for a locking mechanism for a safe that would contain personal items, money, or really anything. This lock’s key would be a customizable series of numbers, color patterns, and words that could be customizable by the user. The size of the safe isn’t a real question, and the lock should be capable of working on various sized safes.
+Our team, Codebreakers, is composed of Andrew Novy, Tyler Chandler, Trey Miller, and led by Hannah Blumhoefer. We arrived at this proposal because, as college students, we all have thought about the security of our new home at one point or another, and this would be a way of addressing that for potentially all college students. At the same time, the intricacies of this lock are as much as we can manage, letting our creativity challenge our ability to produce the best possible product.
+
+\section{FEATURES}
+
+Alert System:
+The alert system will be programmed to set off a noise when a mistake is made. This is to simulate an alarm that alerts security of the robber's attempt to break into the vault. This will utilize the speaker on the Circuit Playground Express. When a correct choice is made, the alert will not sound off. 
+
+Button:
+A button will be used to work with the mechanism. The button will be programmed with the circuit playground express to allow for user input when unlocking the mechanism. It will then connect to the alert system or door servo based on whether the unlocking mechanism fails or succeeds.
+
+Door's Servo:
+The servo for the door will open once the lock has been successfully unlocked. The servo will activate and push the vault door open. This is to ensure that bank workers would still be able to access the vault while being locked when the mechanism has not been successfully unlocked.
+
+Color Sensor:
+The color sensor will be utilized to change color based on the choices made by the system tester. If a mistake is made and the alert sounds, it will light up red. It will turn green if the system is being operated properly.
+
+\section{PROBLEM STATEMENT}
+The problem we are looking to solve for this project is the problem of security of personally items. As a college student, the security of personal items is esencial when living in the dorms or even your apartment. Dorm rooms do not have any security measures to prevent someone from coming into your room and stealing your electronic, credit cards, jewelry, or even your textbooks. The issue of thefts in campus housing has plagued the nation for many years. According to Reolink, a security company known for selling secruity cameras and other security measures, 70 percent of dorm crimes from 2012-2014 were dorm burglaries.\cite{Hu} The problem of dorm theft needs to be solved to allow for college students to feel safe while at school. The need for dorm security is needed now more than ever.
+
+\section{PROBLEM SOLUTION}
+
+Since the main problem faced is an anti-theft system that fits the needs and budget of a college student, a small system that fits these necessities is needed. Our solution to this problem is to design and build an anti-theft system to fulfill this need. This solution will consist of building, designing, coding, and testing a vault-type structure and corresponding anti-theft system that is compact enough to fit into a college dorm room while also providing enough room to fit several personal items and being economically feasible for students.
+
+In order to arrive at our solution, we first approached our problem by brainstorming potential lock, vault, or anti-theft systems and the application of the said system. Through this deliberation, we decided that a small vault-like system would make the most sense for the needs of a college student. After determining the application of our solution, we began the design process of how the system would work and a rough plan of how the setup would look.
+
+As mentioned above in the features section, our anti-theft system will consist of several mechanisms, sensors, and features to achieve our solution. First, a keyword will be spoken into the Circuit Playground Express microphone to allow for access to the next steps of opening the vault. A button combination will then be needed in order to unlock the vault door while, simultaneously, a correct color identification must be detected by the color sensor. If the correct sequence and color are present, this will activate two servos that will let the door be opened, giving access to contents inside. In addition to this, the Circuit Playground Express will be used to monitor whether or not the correct information was entered. If incorrect information is given, an alarm will be activated to alert when someone is trying to break into the vault.
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=4.5in]{Prop1.jpg}
+\caption{Anti-Theft System Design}
+\label{fig:Prop1}
+\end{figure}
+
+As shown in Figure \ref{fig:Prop1}, the general layout of the components will have the Circuit Playground Express located in the middle of the vault door. Since the Express provides feedback, accepts vocal and visual inputs, and needs to be in close proximity to external sensors, this is the most logical placement. The combination buttons will be located underneath the Express also for easy access to the user. The second image in Figure \ref{fig:Prop1} shows the configuration of the vault door with the servo actuators located in the side of the door compared to the locations of the Express and buttons. Finally, in the last Figure \ref{fig:Prop1} image, the inside of the vault will have two spaces to store personal items with a removable shelf for larger items. Although the final product would be constructed out of metal, for ease, this prototype will be constructed out of wood.
+
+\begin{table}[ht]
+  \caption{Parts Requested}
+  \label{table:parts_list}
+  \begin{center}
+  \begin{tabular}{|p{3in}|c|}
+  
+  \hline
+  Part description & Qty\\
+  \hline
+  \hline
+  Adafruit Circuit Playground Express & 1 \\
+  \hline
+  AAA Battery Holder & 1 \\
+  \hline
+  USB Cable & 1 \\
+  \hline
+  Servos & 2\\
+  \hline
+  Button Sensors & 6\\
+  \hline
+  Hinges & 2\\
+  \hline
+  Wood & Vault Materials\\
+  \hline
+  \end{tabular}
+  \end{center}
+  \end{table}
+As shown above in Table \ref{table:parts_list}, this is the list of parts we are requesting to complete our solution to the anti-theft system problem. Although this should cover the extra sensors and technology we need, this can still be regarded as a preliminary list. Although the exact about of wood needed at this time is unknown, vault building materials are added to the table to indicate the request for these materials.  
+
+Although we do not have any written code yet, important code that we will have to look for is concerning the microphone input, button inputs, color sensing, servo operation, and alarm capabilities.
+
+\section{CONCLUSION}
+In conclusion, we will design, construct, code, and test a lock and safe that would be used inside a standard dorm room. Since campus security is always a worry for everyone attending school in person, this would be a way to mitigate some of the potential risks to one’s belongings. We plan to involve sensors, microphones, a color sensor, and possibly more mechanisms to create a unique but effective anti-theft safe.
+
+\newpage
+%\section{References}
+\printbibliography[heading=subbibintoc]
+%\bibliographystyle{plain}
+%\bibliography{ref}
+
+\end{document}
